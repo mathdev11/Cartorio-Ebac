@@ -24,7 +24,7 @@ int registro()//função responsável por cadastrar o úsuario no sistem
      file = fopen(arquivo, "a");//responsavel pela atualização de cadrastro
      fprintf(file,"\n");//\n é responsabel por pular uma linha
      fclose(file);//usado para encerrar/fechar o arquivo
-   
+     
    
      printf("Digite o nome a ser cadrastrado:   \n");//colentando informaçãoes do usuário
      scanf("%s", nome);//%s usado nessa para localizar a variavel nome
@@ -36,7 +36,7 @@ int registro()//função responsável por cadastrar o úsuario no sistem
      file = fopen(arquivo, "a");//abrir/atualizar o arquivo
      fprintf(file,"\n");//pular uma linha do arquivo
      fclose(file);//fechar o arquivo
-   
+          
      printf("Digite o sobrenome a ser cadastrado:   \n");//coletando informações do usuario
      scanf("%s", sobrenome);//%s resposavel pela coleta do sobrenome
    
@@ -47,7 +47,7 @@ int registro()//função responsável por cadastrar o úsuario no sistem
      file = fopen(arquivo, "a");//atulaizar o arquivo
      fprintf(file,"\n");//pular uma linha no arquivo
      fclose(file);//encerrrar/fechar o arquivo
-   
+     
      printf("Digite o cargo a ser cadastrado:   \n");//coletar dados do usuário
      scanf("%s", cargo);//%s resposavel pela coleta do cargo 
    
@@ -64,24 +64,26 @@ int consulta ()//funcão responsavél pela consulta
     char cpf[40];
     char conteudo[200];
    
-      printf("Digite o cpf a ser consultado:  ");//coletar dados do usuario
+      printf("Digite o cpf a ser consultado:  ");//recebendo qual usuario vai ser consultado
       scanf("%s",cpf);//%s resposavel pela coleta a char
    
       FILE *file;//criar o arquivo
       file = fopen(cpf,"r");//responsavel por abrir o arquivo/ r é read ( ler o contedudo do arquivo)
-   
+      system("cls");
+	     
     if(file == NULL)// ''Se a opção dor nula, alocação de resposta''
    {
 	    printf("\nNão foi possível localizar esse arquivo, não localizado");//informar dados ao usuario
-	    printf("\n\n");//resposavel por pular a linha 
+	    printf("\n\n");//responsavel por pular a linha 
 	    system("pause");//mantem o sistema na pagina atual	  
    }  
    
-    while(fgets(conteudo, 200, file) != NULL)//while é ''enquando o usurario está escrevendo''
+    while(fgets(conteudo, 200, file) != NULL)//while é ''enquando o usuario está escrevendo''
     {
     	printf("\nEssas são as informações do Usuário:  ");//coletar dados do usuario
-    	printf("%s",conteudo);//%s resposavelpelo dado conteudo
+    	printf("%s",conteudo);//%s resposavel pelo dado conteudo
     	printf("\n\n");//usado para pular a linha
+    
     	
     	system("pause");//manter o sistema na pagina atual
 	}
@@ -122,10 +124,10 @@ int main()
     
     comparacao = strcmp(senhadigitada, "admin"); //strcmp é string de comparacao
     
-    if(comparacao == 0)
+    if(comparacao == 0)//funcão usada para o login 
     {
     	 system("cls");
-	     for(laco=1;laco=1;)
+	     for(laco=1;laco=1;)//se o usuario desejar sair é só igualar a 0
          {
          
 	      system("cls"); //resposavel por limpar a tela       	
@@ -163,7 +165,7 @@ int main()
 	        
 	          case 4: 
 	          printf("Obrigado por utilizar o sistema!\n");
-	          return 0;
+	          return 0;//faz o usuario sair do sistema = 0
 	          break;
 	        	    
 	          default:
